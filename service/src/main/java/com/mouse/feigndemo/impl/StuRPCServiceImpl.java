@@ -23,20 +23,17 @@ import java.util.List;
 public class StuRPCServiceImpl implements StuRpcService {
 
     @Override
-    @RequestMapping(method = RequestMethod.GET, value = "/add")
     public int add(int a, int b) {
         return a + b;
     }
 
     @Override
-    @RequestMapping(method = RequestMethod.GET, value = "/stringTest")
     public String stringTest(Param param) {
         log.info("param {}", param);
         return param.getB();
     }
 
     @Override
-    @RequestMapping(method = RequestMethod.GET, value = "/resultTest")
     public Result<List<Long>> resultTest(Param param) {
         return Result.success(List.of(param.getC()));
     }
