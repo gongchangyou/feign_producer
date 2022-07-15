@@ -56,13 +56,13 @@
     </dependencies>
     <distributionManagement>
         <repository>
-            <id>nexus-releases</id>
+            <id>local-nexus-releases</id>
             <url>
                 http://localhost:8081/nexus/repository/maven-public/
             </url>
         </repository>
         <snapshotRepository>
-            <id>nexus-snapshots</id>
+            <id>local-nexus-snapshots</id>
             <url>
                 http://localhost:8081/nexus/repository/maven-snapshots/
             </url>
