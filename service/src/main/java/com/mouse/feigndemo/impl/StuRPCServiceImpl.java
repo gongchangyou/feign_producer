@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -16,7 +17,8 @@ import java.util.List;
  * @date 2022/1/13 1:44 下午
  */
 @Slf4j
-@Service
+@RestController
+@RequestMapping(StuRpcService.path)
 public class StuRPCServiceImpl implements StuRpcService {
 
     @Override
