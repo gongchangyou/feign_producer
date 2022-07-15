@@ -5,6 +5,8 @@ import com.mouse.feigndemo.intf.Result;
 import com.mouse.feigndemo.intf.StuRpcService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
@@ -18,8 +20,9 @@ import java.util.List;
 public class StuRPCServiceImpl implements StuRpcService {
 
     @Override
+    @RequestMapping(method = RequestMethod.GET, value = "/add")
     public int add(int a, int b) {
-        return 0;
+        return a + b;
     }
 
     @Override
