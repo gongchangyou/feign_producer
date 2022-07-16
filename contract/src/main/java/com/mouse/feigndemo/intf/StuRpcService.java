@@ -13,9 +13,9 @@ import java.util.List;
  * @version 1.0
  * @date 2022/1/12 9:56 上午
  */
-@FeignClient(value = StuRpcService.name, url = StuRpcService.path)
+//服务名和nacos中的注册名保持一致
+@FeignClient(value = "feign-service-name", path = StuRpcService.path)
 public interface StuRpcService {
-    String name = "StuRpcService";
     String path = "stu";
 
     @RequestMapping(method = RequestMethod.GET, value = "/add")
