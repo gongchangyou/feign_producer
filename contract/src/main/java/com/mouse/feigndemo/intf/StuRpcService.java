@@ -1,6 +1,7 @@
 package com.mouse.feigndemo.intf;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,10 +22,10 @@ public interface StuRpcService {
     @RequestMapping(method = RequestMethod.GET, value = "/add")
     int add(@RequestParam("a") int a,@RequestParam("b")  int b);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/stringTest")
-    String stringTest(Param param);
+    @RequestMapping(method = RequestMethod.POST, value = "/stringTest")
+    String stringTest(@RequestBody Param param);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/resultTest")
-    Result<List<Long>> resultTest(Param param);
+    @RequestMapping(method = RequestMethod.POST, value = "/resultTest")
+    Result<List<Long>> resultTest(@RequestBody Param param);
 
 }
