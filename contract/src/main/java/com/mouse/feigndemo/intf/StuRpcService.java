@@ -19,12 +19,28 @@ import java.util.List;
 public interface StuRpcService {
     String path = "stu";
 
+    /**
+     * 加法 简单的多个入参
+     * @param a
+     * @param b
+     * @return
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/add")
     int add(@RequestParam("a") int a,@RequestParam("b")  int b);
 
+    /**
+     * 复杂的入参 对象
+     * @param param
+     * @return
+     */
     @RequestMapping(method = RequestMethod.POST, value = "/stringTest")
     String stringTest(@RequestBody Param param);
 
+    /**
+     * 复杂的出入参
+     * @param param
+     * @return
+     */
     @RequestMapping(method = RequestMethod.POST, value = "/resultTest")
     Result<List<Long>> resultTest(@RequestBody Param param);
 
